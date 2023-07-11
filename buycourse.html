@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buy Course</h1>
+
+    <table boarder=1>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            <th>Course Price</th>
+            <th>Lessons</th>
+        </tr>
+        <tr>
+         <tr th:each="course:${course}">
+            <td th:text="${course.courseId}"></td>
+            <td th:text="${course.courseName}"></td>
+            <td th:text="${course.coursePrice}"></td>
+            <td>
+            <ul>
+             <li th:each="lesson : ${course.lessons}" th:text="${lesson.lessonName}"></li>
+                </ul>
+            </td>
+        
+        </tr>
+        </tr>
+        
+        <!-- Add more courses as needed -->
+    </table>
+    <a href="/studentHome" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #4CAF50; color: #fff; text-decoration: none; border-radius: 5px; border: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Back</a>
+       
+</body>
+</html>
