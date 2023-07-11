@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:blue;         
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form action="/addUser" method="POST">
+        <input type="hidden" name="id" value="123456789">
+        
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <label>Role:</label>
+        <input type="checkbox" id="student" name="role" value="student">
+        <label for="student">Student</label>
+        <input type="checkbox" id="teacher" name="role" value="teacher">
+        <label for="teacher">Teacher</label>
+        
+        <label for="mobile">Mobile:</label>
+        <input type="text" id="mobile" name="mobile" required>
+        
+        <input type="submit" value="Register">
+         <label> if already a user got to login....! </label>
+    
+    
+    <a href="/index" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #4CAF50; color: #fff; text-decoration: none; border-radius: 5px; border: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">GoTo Home</a>
+      <a href="/login" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #4CAF50; color: #fff; text-decoration: none; border-radius: 5px; border: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">login</a>
+
+        
+    </form>
+   
+  
+
+</body>
+</html>

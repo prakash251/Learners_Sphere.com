@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>View Courses</h1>
+
+    <table>
+        <tr>
+           
+            <th>lesson ID</th>
+            <th>lesson Name</th>
+            <th>topics</th>
+            <th>link</th>
+            <th>Course ID</th>
+        </tr>
+        <tr >
+            <td th:text="${lesson.lessonId}"></td>
+            <td th:text="${lesson.lessonName}"></td>
+            <td th:text="${lesson.topics}"></td>
+            <td th:text="${lesson.link}"></td>
+            <td th:text="${lesson.course.courseId}"></td>
+        </tr>
+    </table>
+    
+    <div>
+ <iframe 
+ width="560" 
+ height="315" 
+ th:src="${lesson.link}" 
+ title="YouTube video player" 
+ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+ allowfullscreen>
+ </iframe>
+
+    </div>
+  
+  <div>
+ <form  action="/addComent" id="commentForm" method="post">
+  <textarea id="commentText"  name="commentText" rows="4" cols="50" placeholder="Write your comment..."></textarea>
+  <br>
+  <button type="submit">AddComment</button>
+</form>
+    </div>
+    
+
+  <div>
+  <h2>Comments:</h2>
+  <ul>
+    <li th:each="commen : ${comments}">
+      <span th:text="${commen.comment}"></span>
+    </li>
+  </ul>
+</div>
+    
+    
+
+    <!-- Add more content as needed -->
+    <a href="/studentHome" style="display: inline-block; padding: 10px 20px; font-size: 18px; background-color: #4CAF50; color: #fff; text-decoration: none; border-radius: 5px; border: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#45a049'" onmouseout="this.style.backgroundColor='#4CAF50'">Back</a>
+       
+
+</body>
+</html>
